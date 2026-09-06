@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sağdan Açılan Panel</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="b.css">
+     <script src="b.js" ></script>
+    
+</head>
+
+<body>
+
+    <main class="page-content">
+        <h1>Sağdan Açılan Panel Örneği</h1>
+
+        <button
+            type="button"
+            id="openPanelButton"
+            class="open-panel-button">
+            Paneli Aç
+        </button>
+    </main>
+
+    <!-- Karartılmış arka plan -->
+    <div id="panelOverlay" class="panel-overlay"></div>
+
+    <!-- Sağ panel -->
+    <aside
+        id="rightPanel"
+        class="right-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="panelTitle"
+        aria-hidden="true">
+
+        <div class="panel-header">
+            <h2 id="panelTitle">Yeni Kayıt</h2>
+
+            <button
+                type="button"
+                id="closePanelButton"
+                class="close-panel-button"
+                aria-label="Paneli kapat">
+                &times;
+            </button>
+        </div>
+
+        <div class="panel-body">
+            <form id="recordForm" novalidate>
+
+    <div class="form-group">
+        <label for="name">Adı <span class="required">*</span></label>
+
+        <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control"
+            placeholder="Adını giriniz"
+            maxlength="50">
+
+        <small id="nameError" class="error-message"></small>
+    </div>
+
+    <div class="form-group">
+        <label for="email">E-posta <span class="required">*</span></label>
+
+        <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="E-posta adresini giriniz"
+            maxlength="100">
+
+        <small id="emailError" class="error-message"></small>
+    </div>
+
+    <div class="form-group">
+        <label for="description">
+            Açıklama <span class="required">*</span>
+        </label>
+
+        <textarea
+            id="description"
+            name="description"
+            class="form-control"
+            placeholder="En az 10 karakterlik açıklama giriniz"
+            maxlength="500"></textarea>
+
+        <div class="field-information">
+            <small id="descriptionError" class="error-message"></small>
+            <small id="characterCounter">0 / 500</small>
+        </div>
+    </div>
+
+</form>
+        </div>
+
+        <div class="panel-footer">
+            <button
+                type="button"
+                id="cancelButton"
+                class="button cancel-button">
+                Vazgeç
+            </button>
+
+            <button
+                type="submit"
+                form="recordForm"
+                class="button save-button">
+                Kaydet
+            </button>
+        </div>
+    </aside>
+
+    
+
+</body>
+</html>

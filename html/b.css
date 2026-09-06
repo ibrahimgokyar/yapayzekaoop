@@ -1,0 +1,221 @@
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f6f8;
+        }
+
+        .page-content {
+            padding: 40px;
+        }
+
+        .open-panel-button {
+            padding: 12px 22px;
+            border: none;
+            border-radius: 8px;
+            background-color: #2563eb;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .open-panel-button:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Karartılmış arka plan */
+        .panel-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            visibility: hidden;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+        }
+
+        .panel-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Sağ panel */
+        .right-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            width: 420px;
+            max-width: 100%;
+            height: 100vh;
+            background-color: white;
+            box-shadow: -6px 0 25px rgba(0, 0, 0, 0.18);
+            transform: translateX(100%);
+            transition: transform 0.35s ease;
+        }
+
+        .right-panel.active {
+            transform: translateX(0);
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 70px;
+            padding: 16px 20px;
+            border-bottom: 1px solid #e5e7eb;
+            background-color: #111827;
+            color: white;
+        }
+
+        .panel-header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .close-panel-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border: none;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.12);
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .close-panel-button:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .panel-body {
+            flex: 1;
+            padding: 22px;
+            overflow-y: auto;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #374151;
+            font-weight: bold;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 7px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .panel-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            padding: 16px 20px;
+            border-top: 1px solid #e5e7eb;
+            background-color: #f9fafb;
+        }
+
+        .button {
+            padding: 11px 18px;
+            border: none;
+            border-radius: 7px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .cancel-button {
+            background-color: #e5e7eb;
+            color: #111827;
+        }
+
+        .save-button {
+            background-color: #16a34a;
+            color: white;
+        }
+
+        .save-button:hover {
+            background-color: #15803d;
+        }
+
+        /* Panel açıkken sayfanın kaymasını engeller */
+        body.panel-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 600px) {
+            .right-panel {
+                width: 100%;
+            }
+
+            .page-content {
+                padding: 20px;
+            }
+        }
+        .required {
+    color: #dc2626;
+}
+
+.form-control.input-error {
+    border-color: #dc2626;
+    background-color: #fff7f7;
+}
+
+.form-control.input-error:focus {
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+.form-control.input-success {
+    border-color: #16a34a;
+}
+
+.error-message {
+    display: block;
+    min-height: 18px;
+    margin-top: 6px;
+    color: #dc2626;
+    font-size: 13px;
+}
+
+.field-information {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#characterCounter {
+    margin-top: 6px;
+    color: #6b7280;
+    font-size: 13px;
+    white-space: nowrap;
+}
