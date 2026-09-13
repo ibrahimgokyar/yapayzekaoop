@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <form name="frm1" method="post" action="#">
+        <table>
+            <tr>
+                <td><input type="text" id="yazi" size="20" /></td>
+                <td><input type="button" value="Ekle" id="kaydet" /></td>
+            </tr>
+        </table>
+    </form>
+    <select id="takimlar" >
+        <option value="-1" >Seçiniz </option>
+       
+    </select>
+
+    <script>
+     var yz =  document.getElementById("yazi");
+     var kd =  document.getElementById("kaydet");
+     var tk =  document.getElementById("takimlar");
+     tk.onclick = function(e)
+     {
+        var yeniOpt = document.createElement("option");
+        //ilgili input içindeki değeri al yeni oluşturduğumuz option ın value özelliğine ata.
+        yeniOpt.value = yz.value;
+        yeniOpt.innerHTML = yz.value;
+        tk.add(yeniOpt);
+     }
+
+    </script>
+</body>
+</html>
